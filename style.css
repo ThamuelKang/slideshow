@@ -1,0 +1,143 @@
+@font-face {
+    font-family: PT Root;
+    src: url('ptroot.woff2')
+}
+
+body {
+    font-family: PT Root;
+    font-size: 24px;
+
+    background-color: black;
+    color: white;
+}
+
+header {
+    position: fixed;
+    font-size: 16px;
+    font-variation-settings: "wght"800;
+    top: 8px;
+    left: 0;
+    width: 100%;
+    overflow: hidden;
+    z-index: 99999999999;
+}
+
+header h1,
+header h2 {
+    display: flex;
+}
+
+
+h1 span,
+h2 span {
+    width: 150px;
+    flex: 0 0 auto;
+    display: inline-block;
+}
+
+h2 span {
+    width: 550px;
+}
+
+section {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    min-height: 100vh;
+    grid-auto-flow: dense;
+}
+
+section div.split {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+}
+
+section div.split:first-child {
+    background-color: rgb(17, 17, 17);
+}
+
+section div.slides {
+    width: 500px;
+    height: 750px;
+    position: relative;
+}
+
+section div.info {
+    max-width: 480px;
+    padding: 30px;
+}
+
+section div.slides img {
+    box-shadow: 0 0 30px rgba(0, 0, 0, 0.25);
+    position: absolute;
+    top;
+    0;
+    left: 0;
+    width: 500px;
+    height: 750px;
+}
+
+section h2 {
+    font-size: 32px;
+}
+
+section p {
+    margin-top: 32px;
+}
+
+section a {
+    background-color: white;
+    color: black;
+    text-decoration: none;
+    font-size: 16px;
+    padding: 10px 25px;
+    border-radius: 50px;
+    display: inline-flex;
+    align-items: center;
+}
+
+section a img {
+    margin-left: 8px;
+    width: 10px;
+    height: 16px;
+    object-fit: cover;
+    object-position: center right;
+    transition: width .25s;
+}
+
+section a:hover img {
+    width: 25px;
+}
+
+
+
+
+section.alternative div.split:first-child {
+    grid-column: 2;
+}
+
+section.alternative div.split:last-child{
+    grid-column: 1;
+}
+
+@media (max-width: 1080px) {
+    section {
+        display: block;
+    }
+
+    section div.split {
+        padding: 65px 0;
+    }
+}
+
+@media (max-width: 700px) {
+
+    body {
+        font-size: 16px;
+    }
+    section div.slides, section div.slides img {
+        width: 80vw;
+        height: 120vw;
+    }
+}
